@@ -10,39 +10,28 @@ cp .env_neo4j .env
 jupyter notebook
 ```
 
-Open the `research/` folder in Jupyter and run notebooks in order.
-
-## Core Capabilities
+## Capabilities
 - Basic prompt and chain setup with LangChain + OpenAI (`01`, `02`).
 - Retrieval-augmented generation using Neo4j vector search (`03`).
 - Conversation memory and history storage in Neo4j (`04`, `05`).
 - Tool-using agents and graph-backed agent flows (`06`, `07`).
-- Cypher QA chain and prompt-instruction techniques (`08`, `09`, `10`).
 
 ## Configuration
-Notebooks load variables from `.env`:
+- `OPENAI_API_KEY`: Required for related integrations/features.
+- `OPENAI_MODEL`: Required for related integrations/features.
+- `OPENAI_TEMPERATURE`: Required for related integrations/features.
 
-- `OPENAI_API_KEY` (required)
-- `OPENAI_MODEL` (optional, default `gpt-4o`)
-- `OPENAI_TEMPERATURE` (optional, default `0`)
-- `NEO4J_URL` (required for graph/retrieval notebooks)
-- `NEO4J_USERNAME` (required for graph/retrieval notebooks)
-- `NEO4J_PASSWORD` (required for graph/retrieval notebooks)
-
-`rag-text-files/` contains sample source text used by retriever notebooks.
-
-## Usage Example
-Recommended notebook progression:
-
-1. `research/01_create_chain.ipynb`
-2. `research/03_create_chain_with_retriever.ipynb`
-3. `research/06_create_agent.ipynb`
-4. `research/08_create_cypher_qa_chain.ipynb`
+## Usage
+```bash
+python -m pytest
+```
 
 ## Contributing and Testing
-- Keep notebooks focused and incremental.
-- Re-run notebook cells top-to-bottom before committing.
-- If you add dependencies, update `requirements.txt`.
+- Contributions are welcome through pull requests with clear, scoped changes.
+- Run the following checks before submitting changes:
+```bash
+python -m pytest
+```
 
 ## License
-This project is licensed under the MIT License. See `LICENSE` for details.
+Licensed under the `MIT` license. See [LICENSE](./LICENSE) for full text.
